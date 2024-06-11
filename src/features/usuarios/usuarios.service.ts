@@ -10,8 +10,12 @@ export class UsuariosService {
         private usersRepository: Repository<Usuario>,
     ) {}
 
-    criarUsuario(): Promise<Usuario> {
-        const user = new Usuario()
+    criarUsuario(formulario): Promise<Usuario> {
+        const user = new Usuario();
+        user.cpf = formulario.cpf;
+        user.idade = formulario.idade;
+        user.nome = formulario.nome;
+        user.ra = formulario.ra
         return this.usersRepository.save(user);
     }
 

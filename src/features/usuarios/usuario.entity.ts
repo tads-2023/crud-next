@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { UsuarioDTO } from './usuario.dto';
 
 @Entity()
 export class Usuario {

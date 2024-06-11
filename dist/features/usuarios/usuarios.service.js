@@ -21,8 +21,12 @@ let UsuariosService = class UsuariosService {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
     }
-    criarUsuario() {
+    criarUsuario(formulario) {
         const user = new usuario_entity_1.Usuario();
+        user.cpf = formulario.cpf;
+        user.idade = formulario.idade;
+        user.nome = formulario.nome;
+        user.ra = formulario.ra;
         return this.usersRepository.save(user);
     }
     listaUsuarios() {
